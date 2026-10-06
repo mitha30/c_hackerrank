@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[1001];
+    int freq[10] = {0}; 
+    
+   
+    scanf("%1000s", s);
+    
+    int len = strlen(s);
+    for(int i = 0; i < len; i++) {
+        // Check if character is a digit by comparing ASCII bounds
+        if(s[i] >= '0' && s[i] <= '9') {
+            freq[s[i] - '0']++; // Convert char to numeric index
+        }
+    }
+    
+    
+    for(int i = 0; i < 10; i++) {
+        printf("%d ", freq[i]);
+    }
+    
+    return 0;
+}
